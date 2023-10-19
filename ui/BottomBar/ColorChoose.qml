@@ -15,17 +15,9 @@ Rectangle{
         anchors.fill: parent
         onClicked: colorPopup.open()
     }
-    Rectangle{
-        id: colorField
-        anchors{
-            left: parent.right
-            top: parent.top
-            bottom: parent.bottom
-        }
-    }
     Popup{
         id: colorPopup
-        x: parent.width
+        x: parent.width *3/2
         y: -parent.height*5
         width: parent.width/2
         height: parent.height*10
