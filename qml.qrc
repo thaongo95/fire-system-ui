@@ -66,5 +66,19 @@
         <file>ui/RightScreen/MapProvider2.qml</file>
         <file>ui/BottomBar/LabelText.qml</file>
         <file>ui/BottomBar/ColorChoose.qml</file>
+        <file>ui/BottomBar/FontChoose.qml</file>
+        <file>ui/assets/security-camera.png</file>
+        <file>ui/assets/tank.png</file>
+        <file>ui/assets/rockets.png</file>
+        <file>ui/BottomBar/MultiFireButton.qml</file>
+        <file>ui/BottomBar/TacTicSelect.qml</file>
+        <file>ui/BottomBar/OneShotTap.qml</file>
+        <file>ui/BottomBar/PanelSelection.qml</file>
+        <file>ui/BottomBar/MultiShotTap.qml</file>
+        <file>ui/BottomBar/NumOfPanelSelection.qml</file>
+        <file>ui/BottomBar/TimeSelection.qml</file>
+        <file>ui/assets/reset.png</file>
+        <file>ui/BottomBar/ResetButton.qml</file>
+        <file>ui/assets/stop-sign.png</file>
     </qresource>
 </RCC>

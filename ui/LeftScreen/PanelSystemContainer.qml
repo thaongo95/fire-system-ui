@@ -3,9 +3,11 @@ import QtQuick 2.15
 Rectangle{
     id: panelSystem
     color: "#fffff0"
+    border.width: 3
+    border.color: "red"
     width: parent.width * 2/3
     height: width * 4/5
-    property int sizeOfPanel: width/5 - spaces
+    property int sizeOfPanel: (width-8)/5 - spaces
     property int spaces: 2
     property variant panelArray: [panel_1, panel_2, panel_3, panel_4, panel_5,
                                 panel_6, panel_7, panel_8, panel_9, panel_10,

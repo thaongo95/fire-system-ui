@@ -5,6 +5,7 @@ Rectangle{
     id: settingPopup
     property int largeMargin: 5
     property int smallMargin: 2
+    property int textSize: app_parameter.textPixelSize
     Rectangle{
         id: headerBarSP
         color: Qt.lighter(app_parameter.colorAppDanPhong, 1.2)
@@ -17,7 +18,7 @@ Rectangle{
         Text{
             text: "CÀI ĐẶT THÔNG SỐ DÀN PHÓNG"
             anchors.centerIn: parent
-            font.pixelSize: 16
+            font.pixelSize: textSize+4
             color: "black"
         }
         Rectangle{
@@ -30,10 +31,10 @@ Rectangle{
                 bottomMargin: smallMargin
             }
             Text{
-                text: "Close"
+                text: "Đóng"
                 color: "black"
                 anchors.centerIn: parent
-                font.pixelSize: 12
+                font.pixelSize: textSize
             }
             width: parent.height * 2
             MouseArea{
@@ -51,10 +52,10 @@ Rectangle{
                 bottomMargin: smallMargin
             }
             Text{
-                text: "Load"
+                text: "Xác nhận"
                 color: "black"
                 anchors.centerIn: parent
-                font.pixelSize: 12
+                font.pixelSize: textSize
             }
             width: parent.height * 2
         }
@@ -76,10 +77,9 @@ Rectangle{
                 top: parent.top
                 left: parent.left
                 right: parent.horizontalCenter
-                bottom: parent.verticalCenter
                 rightMargin: largeMargin
-                bottomMargin: largeMargin
             }
+            height: parent.height*2/5
             Text{
                 id: tamhuongtittle
                 text: "Tầm Hướng"
@@ -88,13 +88,14 @@ Rectangle{
                     horizontalCenter: parent.horizontalCenter
                     margins: smallMargin
                 }
-                font.pixelSize: 14
+                font.pixelSize: textSize+2
             }
             SliderText{
                 id: sliderTam
                 nameValue: "V-tầm:"
                 anchors{
                     top: tamhuongtittle.bottom
+                    topMargin: height/4
                     horizontalCenter: parent.horizontalCenter
                     margins: smallMargin
                 }
@@ -104,7 +105,7 @@ Rectangle{
                 nameValue: "V-hướng:"
                 anchors{
                     top: sliderTam.bottom
-                    topMargin: 5
+                    topMargin: height/4
                     horizontalCenter: parent.horizontalCenter
                     margins: smallMargin
                 }
@@ -114,7 +115,7 @@ Rectangle{
             id: cameraButtonControl
             color: Qt.lighter(app_parameter.colorAppDanPhong, 1.5)
             anchors{
-                top: parent.verticalCenter
+                top: directionButtonControl.bottom
                 left: parent.left
                 right: parent.horizontalCenter
                 bottom: parent.bottom
@@ -128,9 +129,38 @@ Rectangle{
                     horizontalCenter: parent.horizontalCenter
                     margins: smallMargin
                 }
-                font.pixelSize: 14
+                font.pixelSize: textSize+2
             }
-
+            SliderText{
+                id: cam_vtam
+                nameValue: "V-tầm:"
+                anchors{
+                    top: parent.top
+                    topMargin: height/2
+                    horizontalCenter: parent.horizontalCenter
+                    margins: smallMargin
+                }
+            }
+            SliderText{
+                id: cam_vhuong
+                nameValue: "V-hướng:"
+                anchors{
+                    top: cam_vtam.bottom
+                    topMargin: height/4
+                    horizontalCenter: parent.horizontalCenter
+                    margins: smallMargin
+                }
+            }
+            SliderText{
+                id: cam_zoom
+                nameValue: "Zoom:"
+                anchors{
+                    top: cam_vhuong.bottom
+                    topMargin: height/4
+                    horizontalCenter: parent.horizontalCenter
+                    margins: smallMargin
+                }
+            }
         }
         Rectangle{
             id: angleButtonControl
@@ -151,7 +181,7 @@ Rectangle{
                     horizontalCenter: parent.horizontalCenter
                     margins: smallMargin
                 }
-                font.pixelSize: 14
+                font.pixelSize: textSize+2
             }
         }
     }

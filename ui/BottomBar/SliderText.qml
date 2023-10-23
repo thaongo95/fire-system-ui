@@ -5,6 +5,7 @@ Rectangle{
     width: parent.width * 5/6
     height: width/5
     property alias nameValue: name.text
+    property int textSize: app_parameter.textPixelSize
     Slider{
         id: slider
         anchors{
@@ -28,6 +29,7 @@ Rectangle{
         Text{
             id: name
             anchors.centerIn: parent
+            font.pixelSize: textSize
         }
     }
     Rectangle{
@@ -42,6 +44,7 @@ Rectangle{
         TextInput{
             anchors.centerIn: parent
             text: parseInt(slider.value)
+            font.pixelSize: textSize
         }
     }
 

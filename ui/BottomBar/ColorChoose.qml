@@ -2,24 +2,36 @@ import QtQuick 2.15
 import QtQuick.Controls
 
 Rectangle{
-    width: 150
-    height: 30
-    color: Qt.darker(app_parameter.colorAppDanPhong, 1.2)
+    width: parent.width/5
+    height: width/5
+    color: Qt.lighter(app_parameter.colorAppDanPhong, 1.2)
+    property alias colorBG: colorField.color
+    property int textSize: app_parameter.textPixelSize
     Text {
         id:  labelPart
-        font.pixelSize: 14
-        text: "Chọn màu nền"
+        font.pixelSize: textSize
+        text: "Màu nền"
         anchors.centerIn: parent
     }
-    MouseArea{
-        anchors.fill: parent
-        onClicked: colorPopup.open()
+    Rectangle{
+        id: colorField
+        anchors{
+            left: parent.right
+        }
+        width: parent.width
+        height: parent.height
+        color: app_parameter.colorAppDanPhong
+        MouseArea{
+            anchors.fill: parent
+            onClicked: colorPopup.open()
+        }
     }
+
     Popup{
         id: colorPopup
-        x: parent.width *3/2
+        x: parent.width
         y: -parent.height*5
-        width: parent.width/2
+        width: parent.width
         height: parent.height*10
         Rectangle{
             id: color1
@@ -34,7 +46,7 @@ Rectangle{
                 anchors.fill: parent
                 onClicked:{
                     colorPopup.close()
-                    app_parameter.setColorAppDanPhong("#483d8b")
+                    colorField.color = "#483d8b"
                 }
             }
         }
@@ -51,7 +63,7 @@ Rectangle{
                 anchors.fill: parent
                 onClicked: {
                     colorPopup.close()
-                    app_parameter.setColorAppDanPhong("#66cdaa")
+                    colorField.color = "#66cdaa"
                 }
             }
         }
@@ -68,7 +80,7 @@ Rectangle{
                 anchors.fill: parent
                 onClicked: {
                     colorPopup.close()
-                    app_parameter.setColorAppDanPhong("#9370db")
+                    colorField.color = "#9370db"
                 }
             }
         }
@@ -85,7 +97,7 @@ Rectangle{
                 anchors.fill: parent
                 onClicked: {
                     colorPopup.close()
-                    app_parameter.setColorAppDanPhong("#ba55d3")
+                    colorField.color = "#ba55d3"
                 }
             }
         }
@@ -102,7 +114,7 @@ Rectangle{
                 anchors.fill: parent
                 onClicked: {
                     colorPopup.close()
-                    app_parameter.setColorAppDanPhong("#7b68ee")
+                    colorField.color = "#7b68ee"
                 }
             }
         }
@@ -119,7 +131,7 @@ Rectangle{
                 anchors.fill: parent
                 onClicked: {
                     colorPopup.close()
-                    app_parameter.setColorAppDanPhong("#c71585")
+                    colorField.color = "#c71585"
                 }
             }
         }
@@ -136,7 +148,7 @@ Rectangle{
                 anchors.fill: parent
                 onClicked: {
                     colorPopup.close()
-                    app_parameter.setColorAppDanPhong("#b0e0e6")
+                    colorField.color = "#b0e0e6"
                 }
             }
         }
@@ -153,7 +165,7 @@ Rectangle{
                 anchors.fill: parent
                 onClicked: {
                     colorPopup.close()
-                    app_parameter.setColorAppDanPhong("#cd853f")
+                    colorField.color = "#cd853f"
                 }
             }
         }
@@ -170,7 +182,7 @@ Rectangle{
                 anchors.fill: parent
                 onClicked: {
                     colorPopup.close()
-                    app_parameter.setColorAppDanPhong("#708090")
+                    colorField.color = "#708090"
                 }
             }
         }
@@ -187,7 +199,7 @@ Rectangle{
                 anchors.fill: parent
                 onClicked: {
                     colorPopup.close()
-                    app_parameter.setColorAppDanPhong("#4682b4")
+                    colorField.color = "#4682b4"
                 }
             }
         }

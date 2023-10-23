@@ -21,12 +21,12 @@ Rectangle{
     MapProvider1{
         id: map1
         anchors.fill: parent
-        visible: false
+        visible: true
     }
     MapProvider2{
         id: map2
         anchors.fill: parent
-        visible: true
+        visible: false
     }
     Image{
         id: changeMapButton
@@ -78,7 +78,7 @@ Rectangle{
     }
     Rectangle{
         id: lockButton
-        color: "white"
+        color: Qt.lighter(app_parameter.colorAppDanPhong, 1.5)
         property bool logFlag: true
         anchors{
             top: parent.top
@@ -96,7 +96,15 @@ Rectangle{
             source: lockButton.logFlag ? "qrc:/ui/assets/padlock.png" : "qrc:/ui/assets/open-padlock.png"
             MouseArea{
                 anchors.fill: parent
-                onClicked: lockButton.logFlag = !lockButton.logFlag
+                onClicked: {
+                    if (lockButton.logFlag==true){
+                        app_parameter.setlockFlag("unlock")
+                    }
+                    else if(lockButton.logFlag==false){
+                        app_parameter.setlockFlag("locked")
+                    }
+                    lockButton.logFlag = !lockButton.logFlag
+                }
             }
         }
     }

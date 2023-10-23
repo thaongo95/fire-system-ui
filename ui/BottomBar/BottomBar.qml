@@ -2,10 +2,7 @@ import QtQuick 2.15
 
 
 Rectangle{
-    property variant panelArray: [panel_1, panel_2, panel_3, panel_4, panel_5,
-                                panel_6, panel_7, panel_8, panel_9, panel_10,
-                                panel_11, panel_12, panel_13, panel_14, panel_15,
-                                panel_16, panel_17, panel_18, panel_19, panel_20]
+
     id: bottomBar
     color: app_parameter.colorAppDanPhong
     AppSettingButton{
@@ -55,16 +52,23 @@ Rectangle{
     }
     FireButton{
         id: fireButton
+        visible: tactic.tacticType === "oneshot"
         anchors.right: parent.right
-        MouseArea{
-            anchors.fill: parent
-            onClicked: {
-                for (var i=0; i<20; i++){
-                    if (panelArray[i].panelStatue==="Ready"){
-                        panelArray[i].setPanelStatue("Fired")
-                    }
-                }
-            }
+
+
+    }
+    MultiFireButton{
+        id: multiFireButton
+        anchors.right: parent.right
+        visible: tactic.tacticType === "multishot"
+
+    }
+    ResetButton{
+        id: resetButton
+        anchors{
+            right: parent.right
+            rightMargin: parent.height *7/5
         }
     }
+
 }

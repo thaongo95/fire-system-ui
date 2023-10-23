@@ -1,14 +1,11 @@
 import QtQuick 2.15
 import QtQuick.Controls 2.15
 
-// this fire button is in developing procession, its take time to figure out
-// an solution to deal this button function
-
 
 Rectangle{
-    id: fire
+    id: multifire
     color: (app_parameter.lockFlag==="unlock") ?
-               "red" :
+               "blue" :
                Qt.darker(app_parameter.colorAppDanPhong, 1.2)
     property variant panelArrayA: [panel_1, panel_2, panel_3, panel_4, panel_5,
                                 panel_6, panel_7, panel_8, panel_9, panel_10,
@@ -36,14 +33,41 @@ Rectangle{
     width: height
     radius: 5
     Image{
+        id: fireSign
+        visible: true
         anchors.centerIn: parent
         height: parent.height*2/3
         fillMode: Image.PreserveAspectFit
-        source: "qrc:/ui/assets/rocket.png"
+        source: "qrc:/ui/assets/rockets.png"
+    }
+    Image{
+        id: stopSign
+        visible: false
+        anchors.centerIn: parent
+        height: parent.height*2/3
+        fillMode: Image.PreserveAspectFit
+        source: "qrc:/ui/assets/stop-sign.png"
     }
     MouseArea{
         anchors.fill: parent
-        onClicked: {
+        onClicked:{
+            if (app_parameter.lockFlag==="unlock"){
+                if (fireSign.visible)
+                    timetoFire.start()
+                if (stopSign.visible)
+                    timetoFire.stop()
+            }
+            fireSign.visible = !fireSign.visible
+            stopSign.visible = !stopSign.visible
+
+        }
+    }
+    Timer{
+        id: timetoFire
+        interval: tactic.timeBetweenTwoShot
+        repeat: true
+        triggeredOnStart: false
+        onTriggered: {
             if (tactic.fireType==="A"){
                 for (var i=0; i<20; i++){
                     if (panelArrayA[i].panelStatue==="Ready"){

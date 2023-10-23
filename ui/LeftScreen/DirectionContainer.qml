@@ -2,11 +2,6 @@ import QtQuick 2.15
 
 Rectangle{
     id: directionContainer
-    anchors{
-        bottom: parent.bottom
-        margins: parent.width/8
-        horizontalCenter: parent.horizontalCenter
-    }
     width: parent.width*2/3
     height: width
     radius: width/2
