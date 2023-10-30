@@ -81,5 +81,7 @@
         <file>ui/BottomBar/ResetButton.qml</file>
         <file>ui/assets/stop-sign.png</file>
         <file>ui/assets/center.png</file>
+        <file>ui/LeftScreen/DirectionButton.qml</file>
+        <file>ui/LeftScreen/ControlObject.qml</file>
     </qresource>
 </RCC>

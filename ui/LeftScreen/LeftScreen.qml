@@ -26,59 +26,16 @@ Rectangle {
             horizontalCenter: parent.horizontalCenter
         }
     }
-    Rectangle{
-        id: tankButton
-        width: parent.width/6
-        height: width
-        radius: width/2
-        color: Qt.lighter(app_parameter.colorAppDanPhong, 1.2)
+    ControlObject{
+        id: objectCtrlBt
         anchors{
             right: parent.right
             bottom: parent.bottom
             margins: parent.width/20
         }
-        visible: true
-        Image{
-            anchors.centerIn: parent
-            width: parent.width*2/3
-            height: width
-            fillMode: Image.PreserveAspectFit
-            source: "qrc:/ui/assets/tank.png"
-        }
-        MouseArea{
-            anchors.fill: parent
-            onClicked:{
-                tankButton.visible = !tankButton.visible
-                cameraModeButton.visible = !cameraModeButton.visible
-            }
-        }
-    }
-    Rectangle{
-        id: cameraModeButton
         width: parent.width/6
         height: width
         radius: width/2
-        color: Qt.lighter(app_parameter.colorAppDanPhong, 1.2)
-        anchors{
-            right: parent.right
-            bottom: parent.bottom
-            margins: parent.width/20
-        }
-        visible: false
-        Image{
-            anchors.centerIn: parent
-            width: parent.width*2/3
-            height: width
-            fillMode: Image.PreserveAspectFit
-            source: "qrc:/ui/assets/security-camera.png"
-        }
-        MouseArea{
-            anchors.fill: parent
-            onClicked:{
-                tankButton.visible = !tankButton.visible
-                cameraModeButton.visible = !cameraModeButton.visible
-            }
-        }
     }
 
 }

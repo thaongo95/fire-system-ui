@@ -7,6 +7,7 @@ SignalControl::SignalControl(QObject *parent)
     , m_move_Step{10.0}
     , m_moveSpeed_X{50}
     , m_moveSpeed_Y{50}
+    , m_controlMode{"tank"}
 {
 
 }
@@ -104,4 +105,17 @@ void SignalControl::setMoveSpeed_Y(int newMoveSpeed_Y)
         return;
     m_moveSpeed_Y = newMoveSpeed_Y;
     emit moveSpeed_YChanged();
+}
+
+QString SignalControl::controlMode() const
+{
+    return m_controlMode;
+}
+
+void SignalControl::setControlMode(const QString &newControlMode)
+{
+    if (m_controlMode == newControlMode)
+        return;
+    m_controlMode = newControlMode;
+    emit controlModeChanged();
 }
