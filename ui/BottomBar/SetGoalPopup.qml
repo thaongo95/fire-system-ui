@@ -131,6 +131,7 @@ Rectangle{
         OneShotTap{
             id: oneShotTap
             visible: tacticSelect.tacticSelected==="Bắn đơn"
+            height: parent.height/3
             anchors{
                 top: tacticSelect.bottom
                 horizontalCenter: parent.horizontalCenter
@@ -141,14 +142,15 @@ Rectangle{
             id: panelSelect
             visible: tacticSelect.tacticSelected==="Bắn đơn" & oneShotTap.options_5
             anchors{
-                top: parent.top
+                top: oneShotTap.bottom
                 right: parent.horizontalCenter
-                topMargin: parent.width/3
+                topMargin: largeMargin*3
             }
         }
         MultiShotTap{
             id: multiShotTap
             visible: tacticSelect.tacticSelected==="Bắn liên thanh"
+            height: parent.height/3
             anchors{
                 top: tacticSelect.bottom
                 horizontalCenter: parent.horizontalCenter
@@ -159,9 +161,9 @@ Rectangle{
             id: numOfPanel
             visible: tacticSelect.tacticSelected==="Bắn liên thanh"
             anchors{
-                top: parent.top
+                top: multiShotTap.bottom
                 right: parent.horizontalCenter
-                topMargin: parent.width/3
+                topMargin: largeMargin*3
             }
         }
         TimeSelection{

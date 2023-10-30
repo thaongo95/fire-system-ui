@@ -77,6 +77,33 @@ Rectangle{
         }
     }
     Rectangle{
+        id: centerButton
+        width: topButtonSize
+        height: topButtonSize
+        radius: width/2
+        anchors{
+            left: positionButton.right
+            top: parent.top
+            margins: topButtonMargin
+
+        }
+        Image{
+            anchors.fill: parent
+            fillMode: Image.PreserveAspectFit
+            source: "qrc:/ui/assets/center.png"
+        }
+        MouseArea{
+            anchors.fill: parent
+            onClicked: {
+                signal_param.setTarget_X(mapBox.width/2 - targetSign.width/2)
+                signal_param.setTarget_Y(mapBox.height/2 - targetSign.width/2)
+                targetSign.visible = !targetSign.visible
+            }
+        }
+    }
+
+
+    Rectangle{
         id: lockButton
         color: Qt.lighter(app_parameter.colorAppDanPhong, 1.5)
         property bool logFlag: true
@@ -111,13 +138,23 @@ Rectangle{
 
 
 
-    Image{
+    Item{
         id: targetSign
-        anchors.centerIn: parent
-        width: parent.width/20
+        property real x_value: signal_param.target_X
+        property real y_value: signal_param.target_Y
+        x: x_value
+        y: y_value
+        visible: false
+        //anchors.centerIn: parent
+        width: parent.width/30
         height: width
-        fillMode: Image.PreserveAspectFit
-        source: "qrc:/ui/assets/aim.png"
+        Image{
 
+            anchors.fill: parent
+            fillMode: Image.PreserveAspectFit
+            source: "qrc:/ui/assets/aim.png"
+
+        }
     }
+
 }

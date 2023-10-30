@@ -6,6 +6,7 @@ Rectangle{
     height: width/5
     property alias nameValue: name.text
     property int textSize: app_parameter.textPixelSize
+    property alias sliderValue: slider.value
     Slider{
         id: slider
         anchors{
@@ -16,7 +17,6 @@ Rectangle{
         height: parent.height * 2/3
         from: 1
         to:100
-        value: parseInt(50)
     }
     Rectangle{
         anchors{

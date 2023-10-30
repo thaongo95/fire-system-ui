@@ -11,6 +11,7 @@ Rectangle {
     property alias options_4: option4.checked
 
     ColumnLayout{
+        anchors.fill: parent
         RadioButton{
             id: option1
             text: qsTr("Bắn từ trái sang, từ trên xuống")

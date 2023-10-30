@@ -16,6 +16,17 @@ Rectangle{
         height: parent.height/4
         fillMode: Image.PreserveAspectFit
         source: "qrc:/ui/assets/up.png"
+        MouseArea{
+            id: up
+            anchors.fill: parent
+        }
+        Timer{
+            interval: 1/signal_param.moveSpeed_Y*2000
+            repeat: true
+            triggeredOnStart: true
+            running: up.containsMouse
+            onTriggered: signal_param.moveUp()
+        }
     }
     Image{
         id: downButton
@@ -27,6 +38,17 @@ Rectangle{
         height: parent.height/4
         fillMode: Image.PreserveAspectFit
         source: "qrc:/ui/assets/down.png"
+        MouseArea{
+            id: down
+            anchors.fill: parent
+        }
+        Timer{
+            interval: 1/signal_param.moveSpeed_Y*2000
+            repeat: true
+            triggeredOnStart: true
+            running: down.containsMouse
+            onTriggered: signal_param.moveDown()
+        }
     }
     Image{
         id: rightButton
@@ -38,6 +60,17 @@ Rectangle{
         height: parent.height/4
         fillMode: Image.PreserveAspectFit
         source: "qrc:/ui/assets/right.png"
+        MouseArea{
+            id: right
+            anchors.fill: parent
+        }
+        Timer{
+            interval: 1/signal_param.moveSpeed_X*2000
+            repeat: true
+            triggeredOnStart: true
+            running: right.containsMouse
+            onTriggered: signal_param.moveRight()
+        }
     }
     Image{
         id: leftButton
@@ -49,5 +82,16 @@ Rectangle{
         height: parent.height/4
         fillMode: Image.PreserveAspectFit
         source: "qrc:/ui/assets/left.png"
+        MouseArea{
+            id: left
+            anchors.fill: parent
+        }
+        Timer{
+            interval: 1/signal_param.moveSpeed_X*2000
+            repeat: true
+            triggeredOnStart: true
+            running: left.containsMouse
+            onTriggered: signal_param.moveLeft()
+        }
     }
 }

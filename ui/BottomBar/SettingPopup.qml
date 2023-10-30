@@ -58,6 +58,14 @@ Rectangle{
                 font.pixelSize: textSize
             }
             width: parent.height * 2
+            MouseArea{
+                id: comfirm
+                anchors.fill: parent
+                onClicked: {
+                    signal_param.setMoveSpeed_Y(sliderTam.sliderValue)
+                    signal_param.setMoveSpeed_X(sliderHuong.sliderValue)
+                }
+            }
         }
     }
 
@@ -93,6 +101,7 @@ Rectangle{
             SliderText{
                 id: sliderTam
                 nameValue: "V-tầm:"
+                sliderValue: signal_param.moveSpeed_Y
                 anchors{
                     top: tamhuongtittle.bottom
                     topMargin: height/4
@@ -103,6 +112,7 @@ Rectangle{
             SliderText{
                 id: sliderHuong
                 nameValue: "V-hướng:"
+                sliderValue: signal_param.moveSpeed_X
                 anchors{
                     top: sliderTam.bottom
                     topMargin: height/4
@@ -134,6 +144,7 @@ Rectangle{
             SliderText{
                 id: cam_vtam
                 nameValue: "V-tầm:"
+                sliderValue: signal_param.moveSpeed_Y
                 anchors{
                     top: parent.top
                     topMargin: height/2
@@ -144,6 +155,7 @@ Rectangle{
             SliderText{
                 id: cam_vhuong
                 nameValue: "V-hướng:"
+                sliderValue: signal_param.moveSpeed_X
                 anchors{
                     top: cam_vtam.bottom
                     topMargin: height/4

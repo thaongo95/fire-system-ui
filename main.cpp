@@ -5,6 +5,7 @@
 #include "firepanel.h"
 #include "appsetting.h"
 #include "tacticsetting.h"
+#include "signalcontrol.h"
 
 int main(int argc, char *argv[])
 {
@@ -17,6 +18,7 @@ int main(int argc, char *argv[])
     FirePanel firePanel11, firePanel12, firePanel13, firePanel14, firePanel15, firePanel16, firePanel17, firePanel18, firePanel19, firePanel20;
     AppSetting appsetting;
     TacticSetting tacticsetting;
+    SignalControl signalcontrol;
     //    qmlRegisterType<FirePanel> ("Thao", 1, 0, "FirePanel");
 
     QQmlApplicationEngine engine;
@@ -51,6 +53,7 @@ int main(int argc, char *argv[])
     rootContext->setContextProperty("panel_20", &firePanel20);
     rootContext->setContextProperty("app_parameter", &appsetting);
     rootContext->setContextProperty("tactic", &tacticsetting);
+    rootContext->setContextProperty("signal_param", &signalcontrol);
 
     return app.exec();
 }

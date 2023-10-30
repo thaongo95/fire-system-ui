@@ -44,7 +44,7 @@ Rectangle{
     MouseArea{
         anchors.fill: parent
         onClicked: {
-            if (tactic.fireType==="A"){
+            if ((tactic.fireType==="A")&&(app_parameter.lockFlag==="unlock")){
                 for (var i=0; i<20; i++){
                     if (panelArrayA[i].panelStatue==="Ready"){
                         panelArrayA[i].setPanelStatue("Fired")
@@ -52,7 +52,7 @@ Rectangle{
                     }
                 }
             }
-            if (tactic.fireType==="B"){
+            if ((tactic.fireType==="B")&&(app_parameter.lockFlag==="unlock")){
                 for (var i=0; i<20; i++){
                     if (panelArrayB[i].panelStatue==="Ready"){
                         panelArrayB[i].setPanelStatue("Fired")
@@ -60,7 +60,7 @@ Rectangle{
                     }
                 }
             }
-            if (tactic.fireType==="C"){
+            if ((tactic.fireType==="C")&&(app_parameter.lockFlag==="unlock")){
                 for (var i=0; i<20; i++){
                     if (panelArrayC[i].panelStatue==="Ready"){
                         panelArrayC[i].setPanelStatue("Fired")
@@ -68,7 +68,7 @@ Rectangle{
                     }
                 }
             }
-            if (tactic.fireType==="D"){
+            if ((tactic.fireType==="D")&&(app_parameter.lockFlag==="unlock")){
                 for (var i=0; i<20; i++){
                     if (panelArrayD[i].panelStatue==="Ready"){
                         panelArrayD[i].setPanelStatue("Fired")
@@ -76,7 +76,7 @@ Rectangle{
                     }
                 }
             }
-            if (tactic.fireType==="E"){
+            if ((tactic.fireType==="E")&&(app_parameter.lockFlag==="unlock")){
                 for (var i=0; i<20; i++){
                     if (panelArrayA[i].panelStatue==="Ready"){
                         panelArrayA[i].setPanelStatue("Fired")

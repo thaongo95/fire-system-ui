@@ -8,6 +8,7 @@ SOURCES += \
         appsetting.cpp \
         firepanel.cpp \
         main.cpp \
+        signalcontrol.cpp \
         tacticsetting.cpp
 
 RESOURCES += qml.qrc
@@ -26,4 +27,5 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 HEADERS += \
     appsetting.h \
     firepanel.h \
+    signalcontrol.h \
     tacticsetting.h
