@@ -8,6 +8,7 @@ SOURCES += \
         appsetting.cpp \
         firepanel.cpp \
         main.cpp \
+        mapsetting.cpp \
         signalcontrol.cpp \
         tacticsetting.cpp
 
@@ -27,5 +28,6 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 HEADERS += \
     appsetting.h \
     firepanel.h \
+    mapsetting.h \
     signalcontrol.h \
     tacticsetting.h

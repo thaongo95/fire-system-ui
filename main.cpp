@@ -6,6 +6,7 @@
 #include "appsetting.h"
 #include "tacticsetting.h"
 #include "signalcontrol.h"
+#include "mapsetting.h"
 
 int main(int argc, char *argv[])
 {
@@ -19,6 +20,7 @@ int main(int argc, char *argv[])
     AppSetting appsetting;
     TacticSetting tacticsetting;
     SignalControl signalcontrol;
+    MapSetting mapsetting;
     //    qmlRegisterType<FirePanel> ("Thao", 1, 0, "FirePanel");
 
     QQmlApplicationEngine engine;
@@ -54,6 +56,7 @@ int main(int argc, char *argv[])
     rootContext->setContextProperty("app_parameter", &appsetting);
     rootContext->setContextProperty("tactic", &tacticsetting);
     rootContext->setContextProperty("signal_param", &signalcontrol);
+    rootContext->setContextProperty("map_param", &mapsetting);
 
     return app.exec();
 }

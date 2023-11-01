@@ -6,6 +6,13 @@ import QtQuick.Controls
 
 Item{
     id: mapContainer
+    property geoCoordinate positionPoint: QtPositioning.coordinate(map_param.cord_X, map_param.cord_Y)
+//    PositionSource{
+//        id: positioner
+//        updateInterval: 1000
+//        active: true
+
+//    }
     Plugin {
         id: mapPlugin1
         name: "osm"
@@ -17,7 +24,7 @@ Item{
         id: map1
         anchors.fill: parent
         plugin: mapPlugin1
-        center: QtPositioning.coordinate(21.69891, 105.24492)
+        center: positionPoint
         zoomLevel: 14
         property geoCoordinate startCentroid
         PinchHandler {

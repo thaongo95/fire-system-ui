@@ -83,5 +83,10 @@
         <file>ui/assets/center.png</file>
         <file>ui/LeftScreen/DirectionButton.qml</file>
         <file>ui/LeftScreen/ControlObject.qml</file>
+        <file>ui/RightScreen/TargetSign.qml</file>
+        <file>ui/RightScreen/LockButton.qml</file>
+        <file>ui/RightScreen/CenterButton.qml</file>
+        <file>ui/RightScreen/PotisionButton.qml</file>
+        <file>ui/RightScreen/MapSwaper.qml</file>
     </qresource>
 </RCC>
