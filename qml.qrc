@@ -88,5 +88,6 @@
         <file>ui/RightScreen/CenterButton.qml</file>
         <file>ui/RightScreen/PotisionButton.qml</file>
         <file>ui/RightScreen/MapSwaper.qml</file>
+        <file>ui/RightScreen/CameraPlace.qml</file>
     </qresource>
 </RCC>

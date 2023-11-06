@@ -20,14 +20,57 @@ Rectangle{
 
     MapProvider1{
         id: map1
-        anchors.fill: parent
+        anchors.fill: screen_param.screenFlag ? map1.parent : smallScreen
+        z: screen_param.screenFlag ? 0 : 1
         visible: true
+        MouseArea{
+            anchors.fill: parent
+            onClicked: {
+                if (screen_param.screenFlag === false)
+                    screen_param.screenFlag = !screen_param.screenFlag
+            }
+        }
     }
     MapProvider2{
         id: map2
-        anchors.fill: parent
+        anchors.fill: screen_param.screenFlag ? map2.parent : smallScreen
+        z: screen_param.screenFlag ? 0 : 1
         visible: false
+        MouseArea{
+            anchors.fill: parent
+            onClicked: {
+                if (screen_param.screenFlag === false)
+                    screen_param.screenFlag = !screen_param.screenFlag
+            }
+        }
     }
+    CameraPlace{
+        id: camHolder
+        anchors.fill: !screen_param.screenFlag ? camHolder.parent : smallScreen
+        z: !screen_param.screenFlag ? 0 : 1
+        visible: true
+        MouseArea{
+            anchors.fill: parent
+            onClicked: {
+                if (screen_param.screenFlag === true)
+                    screen_param.screenFlag = !screen_param.screenFlag
+            }
+        }
+    }
+
+    Rectangle{
+        id: smallScreen
+        color: "red"
+        height: parent.height/4
+        width: parent.width/4
+        anchors{
+            left: parent.left
+            bottom: parent.bottom
+            margins: 10
+        }
+    }
+
+
     MapSwaper{
         id: changeMapButton
         anchors{

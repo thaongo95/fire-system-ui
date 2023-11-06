@@ -9,6 +9,7 @@ SOURCES += \
         firepanel.cpp \
         main.cpp \
         mapsetting.cpp \
+        screensetting.cpp \
         signalcontrol.cpp \
         tacticsetting.cpp
 
@@ -29,5 +30,6 @@ HEADERS += \
     appsetting.h \
     firepanel.h \
     mapsetting.h \
+    screensetting.h \
     signalcontrol.h \
     tacticsetting.h
